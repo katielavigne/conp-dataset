@@ -141,6 +141,17 @@ if __name__ == "__main__":
         )
         OSFCrawlerObj.run()
 
+        if verbose:
+            print(
+                os.linesep
+                + "==================== OSF Experiment Crawler Running ===================="
+                + os.linesep,
+            )
+        OSFCrawlerExpObj = OSFCrawlerExp(
+            github_token, config_path, verbose, force, no_pr, basedir
+        )
+        OSFCrawlerExpObj.run()
+        
         # INSTANTIATE NEW CRAWLERS AND RUN HERE
 
     except Exception:
